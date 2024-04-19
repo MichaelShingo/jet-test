@@ -29,7 +29,7 @@ interface RestaurantItemProps {
 
 const RestaurantItem: React.FC<RestaurantItemProps> = ({restaurant}) => {
     return (
-        <div className="my-3 min-h-20 w-[90%] bg-orange-500">
+        <div className="my-3 min-h-20 w-[90%] bg-orange-primary">
             <h2>{restaurant.name}</h2>
             <h3>{restaurant.rating.starRating}</h3>
             <div className="flex flex-row">
