@@ -47,7 +47,9 @@ interface CuisineProps {
 
 const Cuisine: React.FC<CuisineProps> = ({name}) => {
     return (
-        <div className="m-5 h-10 w-fit rounded-sm bg-white">{name}</div>
+        <div className="m-2 flex h-8 w-fit items-center justify-center rounded-md bg-white px-2 text-orange-primary">
+            <h4>{name}</h4>
+        </div>
     )
 }
 
