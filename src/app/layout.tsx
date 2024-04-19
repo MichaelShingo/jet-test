@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Ubuntu } from 'next/font/google';
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"; 
 
-const inter = Inter({ subsets: ["latin"] });
+config.autoAddCss = false;
+
+const ubuntu = Ubuntu({subsets: ['latin'], weight: ['300', '400', '500', '700']});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full w-full">
-      <body className={inter.className + ' bg-none h-full w-full bg-transparent flex items-start justify-center'}>{children}</body>
+      <body className={ubuntu.className + ' bg-none h-full w-full bg-transparent flex items-start justify-center'}>{children}</body>
     </html>
   );
 }
