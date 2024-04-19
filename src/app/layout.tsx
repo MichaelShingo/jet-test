@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="bg-image h-full w-full bg-red-200 bg-[url('/foodBackground.jpg')] bg-cover bg-center">
+      <body className={inter.className + ' bg-none h-full w-full bg-transparent flex items-start justify-center'}>{children}</body>
     </html>
   );
 }
