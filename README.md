@@ -1,5 +1,5 @@
 This is a Next.js application deployed on Vercel at the following link:
-[https://jet-test-five.vercel.app]
+https://jet-test-five.vercel.app
 
 The application can also be run locally with the following steps:
 
@@ -9,7 +9,6 @@ The application can also be run locally with the following steps:
 ```npm install```
 
 3. Then, run the local development server:
-```npm run dev
-```
+```npm run dev```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
