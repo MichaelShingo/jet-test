@@ -1,6 +1,7 @@
+import { Restaurant } from './types';
+
 const endpoint: string =
 	'https://corsproxy.io/?https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF';
-import { Restaurant } from './types';
 
 export const fetchFirstTenRestaurants = async (): Promise<Restaurant[]> => {
 	const res: Response = await fetch(endpoint);
