@@ -5,6 +5,13 @@ interface RestaurantItemProps {
 	restaurant: Restaurant;
 }
 
+const roundToNearestQuarter = (num: number): number => {
+	if (num > 0.7) {
+		return Math.floor(num * 4) / 4;
+	}
+	return Math.ceil(num * 4) / 4;
+};
+
 const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
 	let fullAddress = `${restaurant.address.firstLine}+${restaurant.address.city}+${restaurant.address.postalCode}`;
 	fullAddress = fullAddress.replace(' ', '+');
@@ -13,20 +20,21 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
 		const res: ReactNode[] = [];
 		const floatRating: number = restaurant.rating.starRating;
 		const intRating = Math.floor(floatRating);
-		let decimalRating: number = Math.round((floatRating - intRating) * 100);
+		const decimalRating: number = roundToNearestQuarter(floatRating - intRating);
 
 		for (let i = 0; i < intRating; i++) {
-			res.push(<img className="" src="/star-solid.svg" />);
+			res.push(<img key={i} className="" src="/star-solid.svg" />);
 		}
 
 		if (decimalRating > 0) {
-			decimalRating = decimalRating < 20 ? 30 : decimalRating;
 			res.push(
-				<img
-					className={`scale-${decimalRating}`}
-					style={{ transform: `scale(${decimalRating}%)` }}
-					src="/star-solid.svg"
-				/>
+				<>
+					<img src="/star-solid.svg" />
+					<div
+						className="h-8 w-8 bg-orange-primary"
+						style={{ transform: `translateX(${-1 * (-26 * decimalRating + 26)}px)` }}
+					></div>
+				</>
 			);
 		}
 		return res;
