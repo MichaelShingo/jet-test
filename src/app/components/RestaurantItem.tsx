@@ -41,7 +41,7 @@ const RestaurantItem: React.FC<RestaurantItemProps> = ({ restaurant }) => {
 	};
 
 	return (
-		<div className="relative my-3 flex min-h-20 w-[90%] flex-row rounded-xl bg-orange-primary p-3 transition-all hover:scale-[102%]">
+		<div className="relative my-3 flex min-h-20 w-[90%] animate-animate-in flex-row rounded-xl bg-orange-primary p-3 transition-all hover:scale-[102%]">
 			<div className="flex w-[60%] flex-col gap-2">
 				<h2 className="text-3xl font-extrabold">{restaurant.name}</h2>
 				<div className="flex flex-row">
